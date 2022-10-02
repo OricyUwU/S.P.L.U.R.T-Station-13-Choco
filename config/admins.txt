@@ -9,3 +9,11 @@
 ###############################################################################################
 
 yourckeygoeshere = Host
+
+chocobann = LazyMaster
+holor = LazyMaster
+mexon = LazyMaster
+k125 = Host
+slendervol = LazyMaster
+dasadas = LazyMaster
+Kernox_  = LazyMaster

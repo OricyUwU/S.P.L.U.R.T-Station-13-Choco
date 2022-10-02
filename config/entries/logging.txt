@@ -20,7 +20,7 @@ LOG_SUSPICIOUS_LOGIN
 LOG_GAME
 
 ## log mecha actions
-LOG_MECHA
+#LOG_MECHA
 
 ## log player votes
 LOG_VOTE
