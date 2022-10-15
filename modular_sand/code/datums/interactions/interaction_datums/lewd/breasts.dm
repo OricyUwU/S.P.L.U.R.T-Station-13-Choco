@@ -25,9 +25,9 @@
 	var/milktext = milk.name
 
 	lines = list(
-		"pushes [u_His] breasts against \the <b>[target]</b>'s mouth, squirting [u_His] warm [lowertext(milktext)] into [t_His] mouth",
-		"fills \the <b>[target]</b>'s mouth with warm, sweet [lowertext(milktext)] as [u_He] squeezes [u_His] boobs, panting",
-		"lets a large stream of [u_His] own abundant [lowertext(milktext)] coat the back of \the <b>[target]</b>'s throat"
+		"толкает свою грудь напротив ротика <b>[target]</b>, стреляя тёплым [lowertext(milktext)] в [t_His] рот",
+		"наполняет ротик <b>[target]</b> тёплым, сладким [lowertext(milktext)], выжимая свои сиськи, задыхаясь от возбуждения",
+		"выпускает большой поток [lowertext(milktext)] покрывая стеночки горлышка <b>[target]</b>"
 	)
 
 	message = "<span class='lewd'>\The <b>[user]</b> [pick(lines)]</span>"
@@ -48,7 +48,7 @@
 	target.reagents.add_reagent(milktype, rand(1,3 * modifier))
 
 /datum/interaction/lewd/titgrope
-	description = "Grope their breasts."
+	description = "Ласкать её грудь."
 	require_user_hands = TRUE
 	require_target_breasts = REQUIRE_ANY
 	write_log_user = "groped"
@@ -59,56 +59,55 @@
 /datum/interaction/lewd/titgrope/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.a_intent == INTENT_HELP)
 		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> gently gropes \the <b>[target]</b>'s breast.</span>",
-					 "<span class='lewd'>\The <b>[user]</b> softly squeezes \the <b>[target]</b>'s breasts.</span>",
-					 "<span class='lewd'>\The <b>[user]</b> grips \the <b>[target]</b>'s breasts.</span>",
-					 "<span class='lewd'>\The <b>[user]</b> runs a few fingers over \the <b>[target]</b>'s breast.</span>",
-					 "<span class='lewd'>\The <b>[user]</b> delicately teases \the <b>[target]</b>'s nipple.</span>",
-					 "<span class='lewd'>\The <b>[user]</b> traces a touch across \the <b>[target]</b>'s breast.</span>"))
+				pick("<span class='lewd'><b>[user]</b> нежно ощупывает грудь <b>[target]</b>.</span>",
+					 "<span class='lewd'><b>[user]</b> мягко сжимает грудь <b>[target]</b></span>",
+					 "<span class='lewd'><b>[user]</b> сжимает грудь <b>[target]</b>.</span>",
+					 "<span class='lewd'><b>[user]</b> проводит несколькими пальцами по груди <b>[target]</b>.</span>",
+					 "<span class='lewd'><b>[user]</b> деликатно дразнит сосок <b>[target]</b>.</span>",
+					 "<span class='lewd'><b>[user]</b> проводит руками по груди <b>[target]</b>.</span>"))
 	if(user.a_intent == INTENT_HARM)
 		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> aggressively gropes \the <b>[target]</b>'s breast.</span>",
-					 "<span class='lewd'>\The <b>[user]</b> grabs \the <b>[target]</b>'s breasts.</span>",
-					 "<span class='lewd'>\The <b>[user]</b> tightly squeezes \the <b>[target]</b>'s breasts.</span>",
-					 "<span class='lewd'>\The <b>[user]</b> slaps at \the <b>[target]</b>'s breasts.</span>",
-					 "<span class='lewd'>\The <b>[user]</b> gropes \the <b>[target]</b>'s breasts roughly.</span>"))
+				pick("<span class='lewd'><b>[user]</b> агрессивно ощупывает грудь <b>[target]</b>.</span>",
+					 "<span class='lewd'><b>[user]</b> хватает грудь <b>[target]</b>.</span>",
+					 "<span class='lewd'><b>[user]</b> крепко сжимает грудь <b>[target]</b>.</span>",
+					 "<span class='lewd'><b>[user]</b> шлепает \the <b>[target]</b> по груди.</span>",
+					 "<span class='lewd'><b>[user]</b> грубо ощупывает грудь <b>[target]</b>.</span>"))
 	if(prob(5 + target.get_lust()))
 		if(target.a_intent == INTENT_HELP)
 			user.visible_message(
-				pick("<span class='lewd'>\The <b>[target]</b> shivers in arousal.</span>",
-					 "<span class='lewd'>\The <b>[target]</b> moans quietly.</span>",
-					 "<span class='lewd'>\The <b>[target]</b> breathes out a soft moan.</span>",
-					 "<span class='lewd'>\The <b>[target]</b> gasps.</span>",
-					 "<span class='lewd'>\The <b>[target]</b> shudders softly.</span>",
-					 "<span class='lewd'>\The <b>[target]</b> trembles as hands run across bare skin.</span>"))
+				pick("<span class='lewd'><b>[target]</b> дрожит от возбуждения</span>",
+					 "<span class='lewd'><b>[target]</b> тихо стонет.</span>",
+					 "<span class='lewd'><b>[target]</b> издает тихий стон.</span>",
+					 "<span class='lewd'><b>[target]</b> задыхается.</span>",
+					 "<span class='lewd'><b>[target]</b> слегка вздрагивает.</span>",
+					 "<span class='lewd'><b>[target]</b> дрожит, когда руки <b>[user]</b> пробегают по [t_His] голой коже.</span>"))
 			if(target.get_lust() < 5)
 				target.set_lust(5)
 		if(target.a_intent == INTENT_DISARM)
 			if (target.restrained())
 				user.visible_message(
-					pick("<span class='lewd'>\The <b>[target]</b> twists playfully against the restraints.</span>",
-						 "<span class='lewd'>\The <b>[target]</b> squirms away from <b>[user]</b>'s hand.</span>",
-						 "<span class='lewd'>\The <b>[target]</b> slides back from <b>[user]</b>'s roaming hand.</span>",
-						 "<span class='lewd'>\The <b>[target]</b> thrusts bare breasts forward into <b>[user]</b>'s hands.</span>"))
+					pick("<span class='lewd'><b>[target]</b> игриво дергается за ограничители.</span>",
+						 "<span class='lewd'><b>[target]</b> отрывается от руки <b>[user]</b>.</span>",
+						 "<span class='lewd'><b>[target]</b> отскакивает от блуждающей руки <b>[user]</b>.</span>",
+						 "<span class='lewd'><b>[target]</b> протягивает обнаженную грудь вперед в руки <b>[user]</b>.</span>"))
 			else
 				user.visible_message(
-					pick("<span class='lewd'>\The <b>[target]</b> playfully bats at <b>[user]</b>'s hand.</span>",
-						 "<span class='lewd'>\The <b>[target]</b> squirms away from <b>[user]</b>'s hand.</span>",
-						 "<span class='lewd'>\The <b>[target]</b> guides <b>[user]</b>'s hand across bare breasts.</span>",
-						 "<span class='lewd'>\The <b>[target]</b> teasingly laces a few fingers over <b>[user]</b>'s knuckles.</span>"))
+					pick("<span class='lewd'>\The <b>[target]</b> игриво бьет по руке <b>[user]</b>.</span>",
+						 "<span class='lewd'>\The <b>[target]</b> избегает руки <b>[user]</b>.</span>",
+						 "<span class='lewd'>\The <b>[target]</b> проводит рукой по голой груди <b>[user]</b></span>"))
 			if(target.get_lust() < 10)
 				target.add_lust(1)
 	if(target.a_intent == INTENT_GRAB)
 		user.visible_message(
-				pick("<span class='lewd'>\The <b>[target]</b> grips <b>[user]</b>'s wrist tight.</span>",
-				 "<span class='lewd'>\The <b>[target]</b> digs nails into <b>[user]</b>'s arm.</span>",
-				 "<span class='lewd'>\The <b>[target]</b> grabs <b>[user]</b>'s wrist for a second.</span>"))
+				pick("<span class='lewd'><b>[target]</b> крепко сжимает запястье <b>[user]</b>.</span>",
+				 "<span class='lewd'><b>[target]</b> вонзает ногти в руку <b>[user]</b>.</span>",
+				 "<span class='lewd'><b>[target]</b> на секунду хватает <b>[user]</b> за запястье.</span>"))
 	if(target.a_intent == INTENT_HARM)
 		user.adjustBruteLoss(1)
 		user.visible_message(
-				pick("<span class='lewd'>\The <b>[target]</b> pushes <b>[user]</b> roughly away.</span>",
-				 "<span class='lewd'>\The <b>[target]</b> digs nails angrily into <b>[user]</b>'s arm.</span>",
-				 "<span class='lewd'>\The <b>[target]</b> fiercely struggles against <b>[user]</b>.</span>",
-				 "<span class='lewd'>\The <b>[target]</b> claws <b>[user]</b>'s forearm, drawing blood.</span>",
-				 "<span class='lewd'>\The <b>[target]</b> slaps <b>[user]</b>'s hand away.</span>"))
+				pick("<span class='lewd'><b>[target]</b> грубо отталкивает <b>[user]</b>.</span>",
+				 "<span class='lewd'><b>[target]</b> сердито вонзает ногти в руку <b>[user]</b>.</span>",
+				 "<span class='lewd'><b>[target]</b> яростно борется с <b>[user]</b>.</span>",
+				 "<span class='lewd'><b>[target]</b> вцепляется когтями в предплечье <b>[user]</b>, пуская кровь.</span>",
+				 "<span class='lewd'><b>[target]</b> отбивает руку <b>[user]</b> от руки.</span>"))
 	return
