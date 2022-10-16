@@ -1,5 +1,5 @@
 /datum/interaction/lewd/oral
-	description = "Go down on them."
+	description = "Поиграть язычком с её киской."
 	require_user_mouth = TRUE
 	require_target_vagina = REQUIRE_EXPOSED
 	write_log_user = "gave head to"
@@ -25,7 +25,7 @@
 	if(partner.is_fucking(user, CUM_TARGET_MOUTH))
 		if(prob(partner.get_sexual_potency()))
 			user.adjustOxyLoss(3)
-			message = "goes in deep on \the <b>[partner]</b>."
+			message = "глубоко входит в <b>[partner]</b>"
 			lust_increase += 5
 		else
 			var/improv = FALSE
@@ -33,13 +33,13 @@
 				if("vagina")
 					if(partner.has_vagina())
 						message = pick(
-							"licks \the <b>[partner]</b>'s pussy.",
-							"runs [u_His] tongue up the shape of \the <b>[partner]</b>'s pussy.",
-							"traces \the <b>[partner]</b>'s slit with [u_His] tongue.",
-							"darts the tip of [u_His] tongue around \the <b>[partner]</b>'s clit.",
-							"laps slowly at \the <b>[partner]</b>.",
-							"kisses \the <b>[partner]</b>'s delicate folds.",
-							"tastes \the <b>[partner]</b>.",
+							"лижет киску <b>[partner]</b>.",
+							"проводит языком по краям киски <b>[partner]</b>.",
+							"следует языком по щели <b>[partner]</b>.",
+							"проводит кончиком языка вокруг клитора <b>[partner]</b>",
+							"медленно приближается к <b>[partner]</b>.",
+							"целует <b>[partner]</b> в нежные складки.",
+							"пробует киску <b>[partner]</b>.",
 						)
 					else
 						improv = TRUE
@@ -47,24 +47,24 @@
 					if(partner.has_penis() || partner.has_strapon())
 						var/genital_name = partner.get_penetrating_genital_name()
 						message = pick(
-							"sucks \the <b>[partner]</b>'s off.",
-							"runs [u_His] tongue up the shape of \the <b>[partner]</b>'s [genital_name].",
-							"traces \the <b>[partner]</b>'s [genital_name] with [u_His] tongue.",
-							"darts the tip of [u_His] tongue around tip of \the <b>[partner]</b>'s [genital_name].",
-							"laps slowly at \the <b>[partner]</b>'s shaft.",
-							"kisses the base of \the <b>[partner]</b>'s shaft.",
-							"takes \the <b>[partner]</b> deeper into [u_His] mouth.",
+							"отсасывает у <b>[partner]</b>.",
+							"запускает язык вверх по форме [genital_name] <b>[partner]</b> .",
+							"следует за <b>[partner]</b> [genital_name] своим языком.",
+							"проводит кончиком языка вокруг кончика [genital_name] <b>[partner]</b> ",
+							"медленно скользит по стволу <b>[partner]</b>.",
+							"целует основание члена <b>[partner]</b>.",
+							"берёт <b>[partner]</b> глубже в свой рот.",
 						)
 					else
 						improv = TRUE
 			if(improv)
 				// get confused about how to do the sex
 				message = pick(
-					"licks \the <b>[partner]</b>.",
-					"looks a little unsure of where to lick \the <b>[partner]</b>.",
-					"runs [u_His] tongue between \the <b>[partner]</b>'s legs.",
-					"kisses \the <b>[partner]</b>'s thigh.",
-					"tries [u_His] best with \the <b>[partner]</b>.",
+					"облизывает <b>[partner]</b>.",
+					"выглядит немного неуверенно, куда лижет <b>[partner]</b>.",
+					"проводит языком между ног <b>[partner]</b>.",
+					"целует бедро <b>[partner]</b>.",
+					"старается лучше всего с <b>[partner]</b>.",
 				)
 	else
 		var/improv = FALSE
@@ -72,12 +72,12 @@
 			if("vagina")
 				if(partner.has_vagina())
 					message = pick(
-						"buries [u_His] face in \the <b>[partner]</b>'s pussy.",
-						"nuzzles \the <b>[partner]</b>'s wet sex.",
-						"finds [u_His] face caught between \the <b>[partner]</b>'s thighs.",
-						"kneels down between \the <b>[partner]</b>'s legs.",
-						"grips \the <b>[partner]</b>'s legs, pushing them apart.",
-						"sinks [u_His] face in between \the <b>[partner]</b>'s thighs.",
+						"зарывается лицом в киску <b>[partner]</b>.",
+						"тыкается носом в мокрую киску <b>[partner]</b>.",
+						"зажимается между ляжками <b>[partner]</b>.",
+						"становится на колени между ножек <b>[partner]</b>.",
+						"хватается за ножки <b>[partner]</b>, и раздвигает их.",
+						"засовывает лицо между ляжками <b>[partner]</b>",
 					)
 				else
 					improv = TRUE
@@ -85,23 +85,23 @@
 				if(partner.has_penis() || partner.has_strapon())
 					var/genital_name = partner.get_penetrating_genital_name()
 					message = pick(
-						"takes \the <b>[partner]</b>'s [genital_name] into [u_His] mouth.",
-						"wraps [u_His] lips around \the <b>[partner]</b>'s [genital_name].",
-						"finds [u_His] face between \the <b>[partner]</b>'s thighs.",
-						"kneels down between \the <b>[partner]</b>'s legs.",
-						"grips \the <b>[partner]</b>'s legs, kissing at the tip of [u_His] [genital_name].",
-						"goes down on \the <b>[partner]</b>.",
+						"берет [genital_name] <b>[partner]</b> в рот.",
+						"обхватывает губами <b>[partner]</b> [genital_name]",
+						"зажимается личиком между ляжками <b>[partner]</b>.",
+						"становится на колени между ног <b>[partner]</b>.",
+						"сжимает руками ноги <b>[partner]</b>, целуя кончик [genital_name].",
+						"налягает на <b>[partner]</b>, прижимаясь всем тельцем.",
 					)
 				else
 					improv = TRUE
 		if(improv)
 			message = pick(
-				"begins to lick \the <b>[partner]</b>.",
-				"starts kissing \the <b>[partner]</b>'s thigh.",
-				"sinks down between \the <b>[partner]</b>'s thighs.",
-				"briefly flashes a puzzled look from between \the <b>[partner]</b>'s legs.",
-				"looks unsure of how to handle \the <b>[partner]</b>'s lack of genitalia.",
-				"seems like [u_He] [u_Were] expecting \the <b>[partner]</b> to have a cock or a pussy or ... something.",
+				"начинает лизать <b>[partner]</b>.",
+				"начинает целовать бедро <b>[partner]</b>.",
+				"опускается между бёдер <b>[partner]</b>.",
+				"ненадолго бросает озадаченный взгляд между ног <b>[partner]</b>.",
+				"выглядит неуверенно, как справиться с отсутствием гениталий у <b>[partner]</b>.",
+				"похоже, что [u_He] [u_Were] ожидали, что у <b>[partner]</b> будет член, или киска, или... что-то в этом роде.",
 			)
 			genital = null
 		else
@@ -123,6 +123,6 @@
 									'modular_sand/sound/interactions/bj9.ogg',
 									'modular_sand/sound/interactions/bj10.ogg',
 									'modular_sand/sound/interactions/bj11.ogg'), 50, 1, -1)
-	user.visible_message("<span class='lewd'><b>\The [user]</b> [message]</span>", ignored_mobs = user.get_unconsenting())
+	user.visible_message("<span class='lewd'><b>[user]</b> [message]</span>", ignored_mobs = user.get_unconsenting())
 	if(fucktarget != "penis" || partner.can_penetrating_genital_cum())
 		partner.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, user)
