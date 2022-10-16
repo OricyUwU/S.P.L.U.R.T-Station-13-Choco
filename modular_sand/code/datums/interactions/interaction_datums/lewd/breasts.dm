@@ -80,7 +80,7 @@
 					 "<span class='lewd'><b>[target]</b> издает тихий стон.</span>",
 					 "<span class='lewd'><b>[target]</b> задыхается.</span>",
 					 "<span class='lewd'><b>[target]</b> слегка вздрагивает.</span>",
-					 "<span class='lewd'><b>[target]</b> дрожит, когда руки <b>[user]</b> пробегают по [t_His] голой коже.</span>"))
+                     "<span class='lewd'><b>[target]</b> дрожит, когда руки касаются голой кожи.</span>"))
 			if(target.get_lust() < 5)
 				target.set_lust(5)
 		if(target.a_intent == INTENT_DISARM)
